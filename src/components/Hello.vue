@@ -33,7 +33,12 @@
 </template>
 
 <script>
-import { required, minLength, between, numeric } from 'vuelidate/lib/validators'
+import {
+  required,
+  minLength,
+  between,
+  numeric
+} from 'vuelidate/lib/validators'
 export default {
   name: 'hello',
   data() {
@@ -53,13 +58,13 @@ export default {
         minLength: minLength(4),
       },
       age: {
-        between: between(10,30),
+        between: between(10, 30),
         numeric,
         // range (val) {
         //   if(val == 18) {
         //     return true
         //   }
-        // }
+        // } range 没生效，需查明原因
       }
     }
 
@@ -70,9 +75,10 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .form-group--error,
-.form-group__message{
-  color:red;
+.form-group__message {
+  color: red;
 }
+
 .form_val {
   color: blue;
 }
